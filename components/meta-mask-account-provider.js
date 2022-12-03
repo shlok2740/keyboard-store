@@ -15,11 +15,10 @@ export default function MetaMaskAccountProvider({ children }) {
             const chainId = await window.ethereum.request({
                 method: "eth_chainId",
             });
-            const rinkebyId = "0x4"; // See https://docs.metamask.io/guide/ethereum-provider.html#chain-ids
-            if (chainId === rinkebyId) {
+            if (chainId === 5) {
                 setEthereum(window.ethereum);
             } else {
-                alert("Please use Rinkeby network");
+                alert("Please use Goerli network");
             }
         }
     };
